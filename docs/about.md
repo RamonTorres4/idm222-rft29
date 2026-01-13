@@ -28,7 +28,7 @@ During my time as the Web and Social Media assistant, I handled different aspect
 
 ## Education
 
-### Drexel Univeraity
+### Drexel University
 
 Bachelor's Degree, Bachelor of Science 
 January 2023 – August 2027

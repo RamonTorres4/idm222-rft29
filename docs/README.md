@@ -1,5 +1,12 @@
 # idm222-rft29 project
 
+## Navigation
+Homepage
+- Portfolio
+- Case Studies
+- About
+- Hobbies
+This is for both the header navigation and footer.
 
 ## Font Sizing
 - xlarge: 2rem
@@ -28,3 +35,6 @@ url: https://fonts.google.com/specimen/EB+Garamond?preview.text=Case%20Studies&c
 Paragraphs, list items, and everything else.
 **Noto Sans**
 https://fonts.google.com/noto/specimen/Noto+Sans?preview.text=The%20red%20fox%20jumps%20over%20the%20brown%20log.&categoryFilters=Sans+Serif:%2FSans%2F*
+
+### Updates
+As of 1/13/26, added all copy to pages.
