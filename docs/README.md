@@ -8,6 +8,11 @@ Homepage
 - Hobbies
 This is for both the header navigation and footer.
 
+## Define Width for all three Sizes
+- Small: Less than 700px
+- Medium: 701px to 1023px
+- Large: 1024px
+
 ## Font Sizing
 - xlarge: 2rem
 - large: 1.5rem

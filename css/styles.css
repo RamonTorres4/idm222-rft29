@@ -6,3 +6,8 @@ root{
 --neutral-dark: #363636;
 --spacing: 1.5rem
 }
+
+*{
+    margin: 0;
+    padding: 0;
+}
