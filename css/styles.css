@@ -1,13 +1,113 @@
-root{
---primary: #2E605D;
---secondary: #FFD873;
---accent: #EFF5EC;
---neutral-light: #97A1A2;
---neutral-dark: #363636;
---spacing: 1.5rem
+root {
+    --primary: #2E605D;
+    --secondary: #FFD873;
+    --accent: #EFF5EC;
+    --neutral-light: #97A1A2;
+    --neutral-dark: #363636;
+    --spacing: 1.5rem
 }
 
-*{
+@font-face {
+    font-family: 'Noto Sans';
+    src: url(/fonts/NotoSans-VariableFont_wdth\,wght.woff2) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url(/fonts/NotoSans-Italic-VariableFont_wdth\,wght.woff2) format('woff2');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url(/fonts/EBGaramond-VariableFont_wght.woff2) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url(/fonts/EBGaramond-Italic-VariableFont_wght.woff2) format('woff2');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+* {
     margin: 0;
     padding: 0;
+    border: 0;
+    background-color: var(--neutral-light);
+}
+
+body{
+    background-color: var(--accent);
+}
+
+main{
+    background-color: var(--primary);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'EB Garamond', serif;
+}
+
+p {
+    font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    line-height: 1.4rem;
+}
+
+/* div.nav {
+    display: flex;
+    background-color: var(--primary);
+
+    div {
+        flex-direction: row;
+        align-items: flex-start;
+
+        ul {
+            list-style: none;
+            background-color: var(--primary);
+
+            li {
+                flex-direction: row;
+                align-items: flex-end;
+            }
+        }
+    }
+} */
+
+
+    
+.navlist{
+    .logo{
+        display: flex;
+        ul{
+            flex-direction: row;
+                justify-content: start;
+        }
+    }
+}
+
+.navlist{
+    display: flex;
+    .navlist{
+        ul{
+            flex-direction: row;
+                justify-content: end;
+            li{
+                list-style: none;
+            }
+        }
+    }
 }
