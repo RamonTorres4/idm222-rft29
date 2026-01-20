@@ -34,6 +34,22 @@ This spacing should be added to the margin-top for each standard element.
 - neutral-light: #97A1A2
 - neutral-dark: #363636
 
+### Light Mode
+Background - #EFF5EC
+Surface - #FFFFFF 
+Text - #363636
+Muted Text - #97A1A2
+Accent - #2E605D
+Highlight - #FFD873   
+
+### Dark Mode
+Background - #0F1A1A 
+Surface - #152424
+Text - #E6ECEB
+Muted Text - #9AA6A5
+Accent - #4FA7A1
+Highlight - #FFD873   
+
 ## Fonts
 Headings & Titles
 
