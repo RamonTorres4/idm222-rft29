@@ -16,12 +16,12 @@ This is for both the header navigation and footer.
 - Large: 1024px
 
 ## Font Sizing
-- xxlarge 3 rem (48px)
-- xlarge: 2rem (32px)
-- large: 1.5rem (24px)
-- medium: 1.125rem (18px)
-- small: 1 rem (16px)
-- xsmall: 0.75rem (12px)
+- xxlarge 3 rem (48px) | h1
+- xlarge: 2rem (32px) | h2
+- large: 1.5rem (24px) | h3
+- medium: 1.125rem (18px) | h4
+- small: 1 rem (16px) | p
+- xsmall: 0.75rem (12px) | li
 
 ## Spacing
 - Margin-top: 1.5rem
@@ -67,7 +67,7 @@ This is the default line height for paragraph text.
 
 
 ### Paragraph Text
-Paragraph Large
+**Paragraph Large**
 - Font Noto Sans
 - Weight 400
 - Size 28px
@@ -75,7 +75,7 @@ Paragraph Large
 - Paragraph Spacing 32px
 - Letter spacing 0%
 
-Paragraph Regular
+**Paragraph Regular**
 - Font Noto Sans
 - Weight 400
 - Size 21px
@@ -83,16 +83,16 @@ Paragraph Regular
 - Paragraph Spacing 32px
 - Letter spacing 0%
 
-Paragraph Small
+**Paragraph Small**
 - Font Noto Sans
 - Weight 400
 - Size 17px
 - Line-Height 25px
 - Letter spacing 0%
 
-Paragraph Xsmall
+**Paragraph Xsmall**
 - Font Noto Sans
-- Weight 400
+- Weight 40017
 - Size 15px
 - Line-Height 23px
 - Letter spacing 0%

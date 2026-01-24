@@ -133,3 +133,8 @@ div.nav {
     }
 }
 
+.placeholder-image{
+    background-color: gray;
+    width: 300px;
+    height: 200px;
+}
