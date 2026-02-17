@@ -27,6 +27,14 @@
                     </defs>
                 </svg>
             </a>
+            <button>
+                <svg class="hamburger" width="125" height="115" viewBox="0 0 125 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="125" height="25" rx="12.5" fill="white"/>
+<rect y="45" width="125" height="25" rx="12.5" fill="white"/>
+<rect y="90" width="125" height="25" rx="12.5" fill="white"/>
+</svg>
+<!-- put close icon svg -->
+</button>
                 <ul class="nav-elements">
                     <li class="nav-elements-item"><a href="about.html">About</a></li>
                     <li class="nav-elements-item"><a href="portfolio.html">Portfolio</a></li>
@@ -39,11 +47,13 @@
             <section>
                 <h1>Hobbies</h1>
                 <p>I have a lot of different hobbies that vary from interest to interest but the ones that I have chosen to share show a variety of my skills and interests.</p>
-                <ul>
-                    <li><a href="#">Cooking</a></li>
-                    <li><a href="#">Retro Repair</a></li>
-                    <li><a href="#">Magic the Gathering</a></li>
-                </ul>
+                <div class="hobbies-nav">
+                    <ul>
+                        <li><a href="#">Cooking</a></li>
+                        <li><a href="#">Retro Repair</a></li>
+                        <li><a href="#">Magic the Gathering</a></li>
+                    </ul>
+            </div>
             </section>
             <section class="cooking">
                 <h2>Cooking</h2>
@@ -136,7 +146,8 @@
                         <img src="images/about/tolarian-terror-crop.jpg" alt="#"><img src="images/about/gurmag-angler-crop.jpg" alt="#"><img src="images/about/sneaky-snacker-crop.jpg" alt="#">
                     </div>
                     <div class="mtg-main">
-       <p><span>Creatures (10)</span></p>
+                    <div class="box-creatures">
+                    <p><span>Creatures (10)</span></p>
                     <ul>
                         <li>4 Tolarian Terror <img src="images/about/6Mana.png"
                                 alt="a number six in a grey circle"><img
@@ -152,8 +163,10 @@
                                 class="mana" src="images/about/U---Mana.png"
                                 alt="a skull in a grey circle"></li>
                     </ul>
+                    </div>
                     <!-- Sorceries -->
-                    <p><span>Sorceries (9)</span></p>
+                    <div class="box-sorceries">
+                        <p><span>Sorceries (9)</span></p>
                     <ul>
                         <li>3 Ponder <img src="images/about/B---Mana.png"
                                 alt="a teardrop in a blue circle"></li>
@@ -168,6 +181,8 @@
                                 class="mana" src="images/about/B---Mana.png"
                                 alt="a teardrop in a blue circle"></li>
                     </ul>
+                    </div>
+                    <div class="box-instants">
                     <p><span>Instants (24)</span></p>
                     <ul>
                         <li>4 Brainstorm <img src="images/about/B---Mana.png"
@@ -192,6 +207,7 @@
                                 class="mana" src="images/about/U---Mana.png"
                                 alt="a skull in a grey circle"></li>
                     </ul>
+                    </div>
                     </div>
                     <div class="mtg-footer">
                         <p><span>Lands (17)</span></p>

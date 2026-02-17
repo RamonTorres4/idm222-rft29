@@ -8,7 +8,7 @@
     /* color palette */
     --light-brand-primary: #2e615e;
     --light-accent-primary: #C58C2B;
-    --light-bg-primary: #F8FCFC;
+    --light-bg-primary: #F6FAF9;
     --light-bg-surface: #FFF;
     --light-bg-section: #E4F1F0;
     --light-text-primary: #1D2F2E;
@@ -48,14 +48,15 @@
     --line-height: 1.5rem;
 
     /* Text Sizes */
+    /* Mobile */
     --h1size: 3rem;
     --h2size: 2rem;
     --h3size: 1.5rem;
     --h4size: 1.125rem;
     --psize: 1rem;
-    --lisize: 0.75rem;
+    --lisize: 1rem;
     --nav-li-size-mobile: 2rem;
-
+    --mobile-li-text: 1.25rem
 }
 
 @font-face {
@@ -90,20 +91,56 @@
     font-display: swap;
 }
 
-/* body{
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-} */
+body {
+    background-color: var(--light-bg-primary);
+}
 
 nav {
     background-color: var(--light-brand-primary);
-    display: flex;
-    flex-wrap: wrap;
     border-bottom: 3px solid var(--light-ui-element-border);
+    display: flex;
+    justify-content: space-between;
+
+    button {
+        all: unset;
+        margin-right: 2rem;
+    }
+
+    a {
+        color: none;
+    }
+
+    @media screen and (width >=700px) {
+        display: flex;
+        flex-wrap: wrap;
+
+        .logo {
+            flex-grow: 2;
+        }
+
+        .hamburger {
+            flex-grow: 2;
+            align-self: flex-end;
+        }
+    }
+
     /* padding: 1 rem var(--spacing); */
 
     ul {
         margin-top: 0;
+    }
+
+    svg.logo {
+        width: 5rem;
+        height: 20vh;
+        margin-left: 1.7rem;
+    }
+
+    .hamburger {
+
+        @media screen and (width >=700px) {
+            display: none;
+        }
     }
 }
 
@@ -192,6 +229,7 @@ ul {
 
 li {
     font-size: var(--lisize);
+    line-height: var(--spacing);
 }
 
 img {
@@ -203,81 +241,148 @@ footer {
     margin-top: var(--spacing);
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
     align-content: center;
 
-    ul{
-        
-        li{
+    ul {
+
+        li {
             font-size: var(--h3size);
             padding: .5rem 0;
         }
     }
 }
 
-svg.logo {
-    width: 5rem;
-    height: 20vh;
-    margin-left: 1.7rem;
-}
-
-/* svg.ham-icon{
-    width: 5rem;
-    height: 10vh;
-}
-
-svg.x-icon{
-    width: 5rem;
-    height: 10vh;
-}  */
-
 .hidden {
-    display: none;
+    display: hidden;
 }
+
+/* This controls the rest of the list items in the nav */
 
 .nav-elements {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 1rem;
-    /* margin: 0 2rem; */
-}
+    display: none;
 
-.nav-elements-item {
-    font-size: var(--h3size);
-}
-
-
-
-/* These selectors are used for the grid for the section mtg */
-
-.mtg-container{
-    display: grid;
-    grid-template-areas: 
-    "head head"
-    "main main"
-    ". footer";   
-}
-
-.mtg-header{
-        grid-area: head;
+    @media screen and (width >=700px) {
         display: flex;
         flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 1rem;
+
+        padding-right: 2rem;
     }
 
-.mtg-main{
-    grid-area: main;
-    ul{
-        li{
-            img{
-                width: 15px;
-                height: 15px;
+    .nav-elements-item {
+        font-size: var(--h3size);
+    }
+
+}
+
+
+.hero-seciton {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @media screen and (width >=700px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+}
+
+
+.hobbies-nav {
+    background-color: var(--light-bg-section);
+    border: 1px solid var(--light-ui-element-border);
+    margin-top: var(--spacing);
+
+    ul {
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        li {
+            padding: 1rem;
+
+            a {
+                color: var(--light-text-secondary);
             }
         }
     }
 }
 
-.mtg-footer{
-    grid-area: foot;
+
+/* These selectors are used for the grid for the section mtg */
+
+.mtg-container {
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (width >=700px) {
+        display: grid;
+        grid-template-areas:
+            "head head"
+            "main main"
+            ". footer";
+    }
+}
+
+.mtg-header {
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    @media screen and (width >=700px) {
+        grid-area: head;
+
+        img {
+            height: 200px;
+            width: 300px;
+        }
+    }
+}
+
+.mtg-main {
+    ul {
+        li {
+            font-size: var(--mobile-li-text);
+
+            img {
+                width: 15px;
+                height: 15px;
+            }
+        }
+    }
+
+    @media screen and (width >=700px) {
+        grid-area: main;
+
+        ul {
+            li {
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+    }
+
+}
+
+
+.mtg-footer {
+
+    ul {
+        li {
+            font-size: var(--mobile-li-text);
+        }
+    }
+
+    @media screen and (width >=700px) {
+        grid-area: foot;
+
+    }
+
 }
