@@ -100,9 +100,18 @@ nav {
     display: flex;
     border-bottom: 3px solid var(--light-ui-element-border);
     /* padding: 1 rem var(--spacing); */
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
 
     ul {
         margin-top: 0;
+    }
+
+    div {
+        svg {
+            margin: 0 1rem;
+        }
     }
 }
 
@@ -217,33 +226,6 @@ svg.x-icon{
     height: 10vh;
 }  */
 
-.hidden {
-    display: none;
-}
-
-.nav-elements {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 1rem;
-    margin: 0 2rem;
-
-    @media (max-width: 360px) {
-
-        main {
-            margin: 0 1rem;
-        }
-
-        .nav-elements {
-            margin: 0;
-        }
-    }
-}
-
-.nav-elements-item {
-    font-size: var(--h3size);
-}
 
 .hero-content {
     display: flex;
@@ -251,5 +233,37 @@ svg.x-icon{
     flex-direction: column;
 }
 
-/* .hero-container{
+
+
+/* This is the screen that his hidden until clicked */
+.off-screen-menu {
+    background-color: var(--light-brand-primary);
+    height: 100vh;
+    width: 100%;
+    max-width: 450px;
+    position: fixed;
+    top: 0;
+    right: -450px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: var(--h3size);
+    transition: 0.3s ease;
+}
+
+/* This is used to move the hidden nav and make it active */
+.drop-down-menu.active {
+    top: 0;
+    right: 0;
+}
+
+.nav-menu {
+    position: relative;
+}
+
+/* .nav-menu {
+    background-color: #E1A226;
 } */

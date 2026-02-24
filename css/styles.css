@@ -21,6 +21,7 @@
     --light-status-color-warning: #B86C29;
     --light-status-color-error: #B22925;
     --light-status-color-info: #2E918C;
+
     --dark-brand-primary: #5CB3AD;
     --dark-accent-primary: #E4B33F;
     --dark-bg-primary: #0D1F1D;
@@ -46,6 +47,9 @@
     --h3-p-spacing: 0.75rem;
     --h4-p-spacing: 0.25rem;
     --line-height: 1.5rem;
+    --p-line-height: 1.7rem;
+    --img-spacing: 0.5rem;
+    --list-indent-spacing: 2.5rem;
 
     /* Text Sizes */
     /* Mobile */
@@ -61,7 +65,7 @@
 
 @font-face {
     font-family: 'Noto Sans';
-    src: url(/fonts/NotoSans-VariableFont_wdth\,wght.woff2) format('woff2');
+    src: url(../fonts/NotoSans-VariableFont_wdth\,wght.woff2) format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -69,7 +73,7 @@
 
 @font-face {
     font-family: 'Noto Sans';
-    src: url(/fonts/NotoSans-Italic-VariableFont_wdth\,wght.woff2) format('woff2');
+    src: url(../fonts/EBGaramond-Italic-VariableFont_wght.woff2) format('woff2');
     font-weight: normal;
     font-style: italic;
     font-display: swap;
@@ -77,7 +81,7 @@
 
 @font-face {
     font-family: 'EB Garamond';
-    src: url(/fonts/EBGaramond-VariableFont_wght.woff2) format('woff2');
+    src: url(../fonts/EBGaramond-VariableFont_wght.woff2) format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -85,7 +89,7 @@
 
 @font-face {
     font-family: 'EB Garamond';
-    src: url(/fonts/EBGaramond-Italic-VariableFont_wght.woff2) format('woff2');
+    src: url(../fonts/EBGaramond-Italic-VariableFont_wght.woff2) format('woff2');
     font-weight: normal;
     font-style: italic;
     font-display: swap;
@@ -110,24 +114,11 @@ nav {
         color: none;
     }
 
-    @media screen and (width >=700px) {
-        display: flex;
-        flex-wrap: wrap;
-
-        .logo {
-            flex-grow: 2;
-        }
-
-        .hamburger {
-            flex-grow: 2;
-            align-self: flex-end;
-        }
-    }
-
     /* padding: 1 rem var(--spacing); */
 
     ul {
         margin-top: 0;
+        list-style: none;
     }
 
     svg.logo {
@@ -142,10 +133,29 @@ nav {
             display: none;
         }
     }
+
+    @media screen and (min-width: 700px) {
+        display: flex;
+        flex-wrap: wrap;
+
+        .logo {
+            flex-grow: 2;
+        }
+
+        .hamburger {
+            flex-grow: 2;
+            align-self: flex-end;
+        }
+    }
 }
 
 main {
     margin: 0 var(--spacing);
+    max-width: 60rem;
+
+    @media screen and (width >=1024px) {
+        max-width: 120rem;
+    }
 }
 
 section {
@@ -163,6 +173,9 @@ h3,
 h4 {
     color: var(--light-text-secondary);
     margin-top: var(--spacing);
+    font-family: 'EB Garamond', Georgia, serif;
+
+
 }
 
 h1 {
@@ -196,9 +209,13 @@ h4+p {
 p {
     font-size: var(--psize);
     margin-top: var(--spacing);
-    line-height: var(--line-height);
+    line-height: var(--p-line-height);
     color: var(--light-text-primary);
+    font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
+
+    /* @media screen and (width >=1024px) {} */
 }
+
 
 a {
     color: var(--light-bg-surface);
@@ -222,7 +239,11 @@ input:focus {
 }
 
 ul {
-    list-style: none;
+    margin: 0;
+    margin-top: var(--spacing);
+}
+
+ol {
     margin: 0;
     margin-top: var(--spacing);
 }
@@ -230,27 +251,58 @@ ul {
 li {
     font-size: var(--lisize);
     line-height: var(--spacing);
+    color: var(--light-text-primary);
+    font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
 }
 
 img {
     width: 100%;
+    margin-top: var(--img-spacing);
 }
+
+video {
+    height: auto;
+    width: 100%;
+    margin-top: var(--img-spacing);
+}
+
+picture+p {
+    margin-top: var(--img-spacing);
+}
+
+/* p+picture {
+    margin-top: var(--img-spacing);
+} */
 
 footer {
     background-color: var(--light-brand-primary);
     margin-top: var(--spacing);
     display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+    justify-content: space-around;
+    align-items: stretch;
 
     ul {
+        margin-bottom: 1.5rem;
+        list-style: none;
+        display: flex;
 
         li {
             font-size: var(--h3size);
             padding: .5rem 0;
         }
     }
+
+    @media screen and (min-width: 700px) {
+        display: flex;
+        flex-wrap: wrap;
+
+        /* ul {
+            display: flex;
+            justify-content: space-around;
+        } */
+
+    }
+
 }
 
 .hidden {
@@ -278,7 +330,7 @@ footer {
 
 }
 
-
+/* This controls the grid on the homepage */
 .hero-seciton {
     display: grid;
     grid-template-columns: 1fr;
@@ -291,6 +343,106 @@ footer {
 }
 
 
+/* This controls the grid on the Case Studies page */
+.case-studies-container {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @media screen and (width >=700px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    /* @media screen and (width >=1024px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
+    } */
+}
+
+.cs-list {
+    margin-left: 1.5rem;
+
+    ol {
+        margin-top: var(--spacing);
+
+        li {
+            margin-top: 1rem;
+            line-height: 1.5rem;
+        }
+    }
+
+    @media screen and (width >=600px) {
+        margin-left: var(--list-indent-spacing);
+        max-width: 80%;
+
+        ol {
+            margin-top: 1rem;
+
+            li {
+                margin-top: 1rem;
+                line-height: 1.5rem;
+            }
+        }
+    }
+
+}
+
+
+/* Portfolio Page Specific Styling */
+.portfolio-container {
+
+    @media screen and (width >=700px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    @media screen and (width >=1024px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
+    }
+}
+
+/* About Page Specific Styling */
+
+.about-container {
+    @media screen and (width >=700px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+
+    }
+}
+
+.about-group {
+    background-color: var(--light-bg-section);
+    border: 2px solid var(--light-ui-element-border);
+    padding: 0.5rem 1rem;
+    margin-top: var(--spacing);
+
+    h3 {
+        margin: 0;
+    }
+}
+
+.about-list {
+    margin-left: var(--list-indent-spacing);
+
+    li::marker {
+        color: var(--light-accent-primary);
+    }
+
+    li {
+        margin: 0.5rem;
+    }
+}
+
+
+/* Hobbies Page Specific Styling */
+/* This controls the anchor tags at the top of the hobbies page. */
 .hobbies-nav {
     background-color: var(--light-bg-section);
     border: 1px solid var(--light-ui-element-border);
@@ -301,6 +453,7 @@ footer {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+        list-style: none;
 
         li {
             padding: 1rem;
@@ -312,77 +465,233 @@ footer {
     }
 }
 
+/* This controls the ingredients section including the checkboxes */
+.directions-container {
+    @media screen and (width >=700px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+}
 
-/* These selectors are used for the grid for the section mtg */
+.directions-container-styling {
+    background-color: var(--white);
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--light-ui-element-border);
+    margin-top: var(--spacing);
 
-.mtg-container {
-    display: flex;
-    flex-direction: column;
+    h3 {
+        margin: 0;
+    }
+
+    ul {
+        list-style: none;
+
+        li {
+            margin-top: 1rem;
+
+        }
+
+        input[type="checkbox"] {
+            accent-color: var(--light-accent-primary);
+            margin-right: 1rem;
+        }
+
+    }
+}
+
+/* This controls the instructions container */
+.instructions-container-styling {
+    ol {
+        list-style: none;
+
+        li {
+            margin-top: 0.5rem;
+
+            span {
+                background-color: var(--white);
+                border: 2px solid var(--light-ui-element-border);
+                padding: 0.2rem;
+                font-weight: bold;
+                font-size: var(--mobile-li-text);
+                display: block;
+                color: var(--light-text-primary);
+            }
+        }
+    }
+}
+
+/* This controls the unordered list in the retro section */
+
+.retro-grid-container {
+    @media screen and (width >=700px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+.retro-grid-item-1 {
 
     @media screen and (width >=700px) {
         display: grid;
-        grid-template-areas:
-            "head head"
-            "main main"
-            ". footer";
+        grid-template-columns: subgrid;
+        grid-column: 1 / 3;
+        border: 2px solid var(--light-ui-element-border);
+        padding: 0 0.5rem;
+        background-color: var(--light-bg-section);
+        /* p {
+        margin: 0;
+    } */
     }
 }
 
-.mtg-header {
+.retro-grid-item-2 {
+    @media screen and (width >=700px) {
+        display: grid;
+        grid-template-columns: subgrid;
+        grid-column: 1 / 3;
+        border: 2px solid var(--light-ui-element-border);
+        padding: 0 0.5rem;
+        background-color: var(--light-bg-section);
+
+        /* p {
+        margin: 0;
+    } */
+    }
+}
+
+.retro-grid-item-3 {
+    @media screen and (width >=700px) {
+        display: grid;
+        grid-template-columns: subgrid;
+        grid-column: 1 / 3;
+        border: 2px solid var(--light-ui-element-border);
+        padding: 0 0.5rem;
+        background-color: var(--light-bg-section);
+
+        /* p {
+        margin: 0;
+    } */
+    }
+}
+
+.retro-grid-item-4 {
+    @media screen and (width >=700px) {
+        display: grid;
+        grid-template-columns: subgrid;
+        grid-column: 1 / 3;
+        border: 2px solid var(--light-ui-element-border);
+        padding: 0 0.5rem;
+        background-color: var(--light-bg-section);
+
+        /* p {
+        margin: 0;
+    } */
+    }
+}
+
+.retro-list {
+    list-style: decimal;
+    margin: 0 2rem 2rem 2rem;
+
+    li {
+        margin-top: var(--spacing);
+    }
+}
+
+@media screen and (width >=700px) {
+
+    ul {
+        list-style: decimal;
+        margin: 0 2rem 2rem 2rem;
+        display: inline;
+
+        li {
+            margin-top: var(--spacing);
+        }
+    }
+}
+
+/* These selectors are used for the grid for the section mtg */
+.decklist-hero-img {
+    /* Make smaller images for this */
+
+    @media screen and (width >=700px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0.2rem;
+    }
+}
+
+.decklist-container {
+    /* display: grid;
+    grid-template-columns: 1fr; */
+
+    ul {
+        list-style-type: none;
+        margin: 1rem 0;
+
+    }
+
+    p {
+        color: var(--light-text-secondary);
+        font-weight: 700;
+
+    }
+
     img {
-        width: 100%;
-        height: auto;
+        width: 15px;
+        height: 15px;
     }
 
     @media screen and (width >=700px) {
-        grid-area: head;
+        display: grid;
+        /* grid-template-columns: subgrid; */
 
         img {
-            height: 200px;
-            width: 300px;
+            width: 20px;
+            height: 20px
+        }
+    }
+
+    @media screen and (width >=1024px) {
+        display: grid;
+
+        img {
+            width: 20px;
+            height: 20px
         }
     }
 }
 
-.mtg-main {
-    ul {
-        li {
-            font-size: var(--mobile-li-text);
-
-            img {
-                width: 15px;
-                height: 15px;
-            }
-        }
-    }
+.decklist-creatures {
 
     @media screen and (width >=700px) {
-        grid-area: main;
-
-        ul {
-            li {
-                img {
-                    width: 20px;
-                    height: 20px;
-                }
-            }
-        }
+        grid-template-columns: subgrid;
+        grid-row: 1/4;
+        justify-self: stretch;
     }
-
 }
 
+.decklist-sorceries {
 
-.mtg-footer {
-
-    ul {
-        li {
-            font-size: var(--mobile-li-text);
-        }
-    }
 
     @media screen and (width >=700px) {
-        grid-area: foot;
-
+        grid-template-columns: subgrid;
+        grid-row: 2/3;
+        justify-self: stretch;
     }
+}
 
+.decklist-instants {
+    justify-self: stretch
+}
+
+.decklist-lands {
+    justify-self: stretch
+}
+
+.decklist-total {
+    justify-self: stretch
 }

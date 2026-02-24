@@ -23,6 +23,16 @@ This is for both the header navigation and footer.
 - small: 1 rem (16px) | p
 - xsmall: 0.75rem (12px) | li
 
+## Images
+
+### Image Sizing
+
+Large - 1024w
+Medium - 640w
+Small - 320w
+
+Aspect Ratio 4x6 for hero images
+
 ## Spacing
 - Margin-top: 1.5rem
 This spacing should be added to the margin-top for each standard element.
