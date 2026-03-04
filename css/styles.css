@@ -21,6 +21,9 @@
     --light-status-color-warning: #B86C29;
     --light-status-color-error: #B22925;
     --light-status-color-info: #2E918C;
+    --white: #fff;
+    --black: #000;
+    --gray: #838383;
 
     --dark-brand-primary: #5CB3AD;
     --dark-accent-primary: #E4B33F;
@@ -37,30 +40,45 @@
     --dark-status-color-warning: #E1A226;
     --dark-status-color-error: #F15D5E;
     --dark-status-color-info: #63C6C1;
-    --white: #fff;
-    --black: #000;
-    --gray: #838383;
 
     /* sizing & spacing */
+
+    /* Spacing */
+    /* This is the spacing for inbetween components */
+    --xs-spacing: 0.5rem;
+    --sm-spacing: 1rem;
+    --md-spacing: 1.5rem;
+    --lg-spacing: 2rem;
+    --xl-spacing: 3rem;
+
     --spacing: 1.5rem;
-    --h2-p-spacing: 1rem;
-    --h3-p-spacing: 0.75rem;
-    --h4-p-spacing: 0.25rem;
-    --line-height: 1.5rem;
-    --p-line-height: 1.7rem;
-    --img-spacing: 0.5rem;
+
     --list-indent-spacing: 2.5rem;
+    /* Font Spacing and Sizing */
+
 
     /* Text Sizes */
-    /* Mobile */
     --h1size: 3rem;
     --h2size: 2rem;
     --h3size: 1.5rem;
     --h4size: 1.125rem;
     --psize: 1rem;
     --lisize: 1rem;
-    --nav-li-size-mobile: 2rem;
-    --mobile-li-text: 1.25rem
+    --nav-li-size-mobile: 1.5rem;
+    --mobile-li-text: 1.25rem;
+
+    /* Font Spacing */
+    --heading-spacing: .5rem;
+    --heading-line-height: 2rem;
+    --body-copy-line-height: 1.7rem;
+    /* --list-item-line-height: 1.5rem; */
+
+    /* --p-line-height: 1.7rem; */
+    /* --h2-spacing: 1.25rem;
+    --h3-spacing: 1rem;
+    --h4-spacing: .85rem; */
+    /* --line-height: 1.5rem; */
+
 }
 
 @font-face {
@@ -96,58 +114,124 @@
 }
 
 body {
-    background-color: var(--light-bg-primary);
+    min-height: 100vh;
+
 }
 
+/* nav */
 nav {
-    background-color: var(--light-brand-primary);
-    border-bottom: 3px solid var(--light-ui-element-border);
+    padding: 1rem;
     display: flex;
-    justify-content: space-between;
+    background-color: var(--light-brand-primary);
+    border-bottom: 2px solid var(--light-ui-element-border);
 
-    button {
-        all: unset;
-        margin-right: 2rem;
+    .logo {
+        display: block;
+        margin-left: 1rem;
     }
 
-    a {
-        color: none;
+    .menu {
+        display: none;
     }
 
-    /* padding: 1 rem var(--spacing); */
+    .ham-menu {
+        height: 200px;
+        width: 200px;
+        margin-left: auto;
+        position: relative;
+        cursor: pointer;
 
-    ul {
-        margin-top: 0;
-        list-style: none;
+        span {
+            height: 30px;
+            width: 75%;
+            background-color: var(--white);
+            border-radius: 25px;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.3s ease;
+        }
+
+        span:nth-child(1) {
+            top: 25%;
+        }
+
+        span:nth-child(2) {
+            top: 50%;
+        }
+
+        span:nth-child(3) {
+            top: 75%;
+        }
+
+        &.active {
+
+            span {
+                background-color: var(--white);
+            }
+
+            span:nth-child(1) {
+                top: 50%;
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+
+            span:nth-child(2) {
+                opacity: 0;
+            }
+
+            span:nth-child(3) {
+                top: 50%;
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+        }
     }
 
-    svg.logo {
-        width: 5rem;
-        height: 20vh;
-        margin-left: 1.7rem;
-    }
+    @media (min-width: 780px) {
+        display: flex;
+        justify-content: space-between;
 
-    .hamburger {
+        .menu {
+            display: flex;
+            flex-direction: row;
 
-        @media screen and (width >=700px) {
+            ul {
+                list-style: none;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                li {
+                    margin: 0 var(--sm-spacing);
+                    font-size: var(--nav-li-size-mobile);
+                }
+            }
+        }
+
+        .ham-menu {
             display: none;
         }
     }
 
-    @media screen and (min-width: 700px) {
+    @media (min-width: 1024px) {
         display: flex;
-        flex-wrap: wrap;
 
-        .logo {
-            flex-grow: 2;
-        }
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
 
-        .hamburger {
-            flex-grow: 2;
-            align-self: flex-end;
+            li {
+
+                a {
+                    font-size: var(--h2size);
+                }
+
+            }
         }
     }
 }
+
 
 main {
     margin: 0 var(--spacing);
@@ -187,7 +271,7 @@ h2 {
 }
 
 h2+p {
-    margin-top: var(--h2-p-spacing);
+    margin-top: var(--heading-spacing)
 }
 
 h3 {
@@ -195,7 +279,7 @@ h3 {
 }
 
 h3+p {
-    margin-top: var(--h3-p-spacing);
+    margin-top: var(--heading-spacing);
 }
 
 h4 {
@@ -203,19 +287,25 @@ h4 {
 }
 
 h4+p {
-    margin-top: var(--h4-p-spacing);
+    margin-top: var(--heading-spacing);
 }
 
 p {
     font-size: var(--psize);
-    margin-top: var(--spacing);
-    line-height: var(--p-line-height);
+    margin-top: var(--sm-spacing);
+    line-height: var(--body-copy-line-height);
     color: var(--light-text-primary);
     font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
 
-    /* @media screen and (width >=1024px) {} */
+    span {
+        font-weight: bold;
+        color: var(--light-text-secondary);
+    }
 }
 
+/* div {
+    margin-top: var(--xs-spacing);
+} */
 
 a {
     color: var(--light-bg-surface);
@@ -250,56 +340,81 @@ ol {
 
 li {
     font-size: var(--lisize);
-    line-height: var(--spacing);
+    line-height: var(--body-copy-line-height);
     color: var(--light-text-primary);
     font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
 }
 
 img {
     width: 100%;
-    margin-top: var(--img-spacing);
+    margin-top: var(--xs-spacing);
 }
 
 video {
     height: auto;
     width: 100%;
-    margin-top: var(--img-spacing);
+    margin-top: var(--xs-spacing);
 }
 
 picture+p {
-    margin-top: var(--img-spacing);
+    margin-top: var(--xs-spacing);
 }
 
 /* p+picture {
-    margin-top: var(--img-spacing);
+    margin-top: var(--xs-spacing);
 } */
 
 footer {
     background-color: var(--light-brand-primary);
-    margin-top: var(--spacing);
+    margin-top: var(--lg-spacing);
     display: flex;
-    justify-content: space-around;
-    align-items: stretch;
+    justify-content: space-between;
+    flex-direction: row;
+    border-top: 2px solid var(--light-ui-element-border);
 
     ul {
-        margin-bottom: 1.5rem;
-        list-style: none;
         display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        list-style: none;
+        margin: 0 2rem 0 0;
+    }
 
-        li {
-            font-size: var(--h3size);
-            padding: .5rem 0;
+    svg {
+        margin-left: 1.5rem;
+
+        &:hover,
+        &:active {
+            color: var(--light-accent-primary);
         }
     }
 
-    @media screen and (min-width: 700px) {
-        display: flex;
-        flex-wrap: wrap;
+    .insta,
+    .linked-in {
+        width: 1;
+        height: 1;
+    }
 
-        /* ul {
-            display: flex;
-            justify-content: space-around;
-        } */
+    @media screen and (min-width: 700px) {
+        ul {
+            svg {
+                margin-left: 1.5rem;
+
+                &.hover,
+                &.active {
+                    color: var(--light-accent-primary);
+
+
+                }
+            }
+
+            .insta,
+            .linked-in {
+                width: 75px;
+                height: 75px;
+            }
+        }
 
     }
 
@@ -309,25 +424,51 @@ footer {
     display: hidden;
 }
 
-/* This controls the rest of the list items in the nav */
+/* off-screen-menu */
+.off-screen-menu {
+    background-color: var(--light-brand-primary);
+    border-left: 1px solid var(--light-ui-element-border);
+    height: 100vh;
+    width: 100%;
+    max-width: 375px;
 
-.nav-elements {
-    display: none;
+    position: fixed;
+    top: 0;
+    right: -450px;
 
-    @media screen and (width >=700px) {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
-        gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
 
-        padding-right: 2rem;
+    text-align: justify;
+    transition: right 0.3s ease;
+    margin: 0;
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 1rem;
+
+        li {
+            font-size: var(--nav-li-size-mobile);
+            margin-top: var(--lg-spacing);
+            text-decoration: underline var(--light-bg-surface);
+            width: 100%;
+
+            a {
+
+                &:click {
+                    background-color: var(--light-accent-primary);
+                    ;
+                }
+            }
+        }
     }
 
-    .nav-elements-item {
-        font-size: var(--h3size);
+    &.active {
+        right: 0;
     }
-
 }
 
 /* This controls the grid on the homepage */
@@ -369,7 +510,8 @@ footer {
 
         li {
             margin-top: 1rem;
-            line-height: 1.5rem;
+
+            line-height: var(--body-copy-line-height);
         }
     }
 
@@ -382,7 +524,7 @@ footer {
 
             li {
                 margin-top: 1rem;
-                line-height: 1.5rem;
+                line-height: var(--body-copy-line-height);
             }
         }
     }
@@ -393,10 +535,18 @@ footer {
 /* Portfolio Page Specific Styling */
 .portfolio-container {
 
+    margin-top: var(--xs-spacing);
+
     @media screen and (width >=700px) {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
+
+        .portfolio-container-item {
+            img:last-child {
+                margin: 0;
+            }
+        }
     }
 
     @media screen and (width >=1024px) {
@@ -444,22 +594,51 @@ footer {
 /* Hobbies Page Specific Styling */
 /* This controls the anchor tags at the top of the hobbies page. */
 .hobbies-nav {
-    background-color: var(--light-bg-section);
-    border: 1px solid var(--light-ui-element-border);
-    margin-top: var(--spacing);
 
     ul {
         margin: 0;
         display: flex;
-        flex-direction: row;
-        justify-content: space-around;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: start;
+        gap: 2rem;
         list-style: none;
 
         li {
-            padding: 1rem;
+            margin: 0;
+            padding: 1rem 0 0 0;
+            font-size: var(--h4size);
 
             a {
                 color: var(--light-text-secondary);
+            }
+        }
+    }
+
+    @media screen and (width >=500px) {
+
+
+        /* background-color: var(--light-bg-section); */
+        border-bottom: 2px solid var(--light-ui-element-border);
+        margin-top: var(--spacing);
+
+        ul {
+            margin: 0;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: start;
+            gap: 2rem;
+            list-style: none;
+
+            li {
+                margin: 0;
+                padding: 1rem 0 0 0;
+                font-size: var(--h4size);
+
+                a {
+                    color: var(--light-text-secondary);
+                }
             }
         }
     }
@@ -467,6 +646,21 @@ footer {
 
 /* This controls the ingredients section including the checkboxes */
 .directions-container {
+
+    div {
+        .directions-container-styling {
+            ul {
+                margin: 0;
+            }
+
+            ul li:first-child {
+                margin: 0;
+            }
+        }
+    }
+
+
+
     @media screen and (width >=700px) {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -478,7 +672,7 @@ footer {
     background-color: var(--white);
     padding: 0.5rem 1rem;
     border: 1px solid var(--light-ui-element-border);
-    margin-top: var(--spacing);
+    margin-top: var(--heading-spacing);
 
     h3 {
         margin: 0;
@@ -495,6 +689,7 @@ footer {
         input[type="checkbox"] {
             accent-color: var(--light-accent-primary);
             margin-right: 1rem;
+            transform: scale(1.5);
         }
 
     }
@@ -504,6 +699,7 @@ footer {
 .instructions-container-styling {
     ol {
         list-style: none;
+        margin-top: var(--heading-spacing);
 
         li {
             margin-top: 0.5rem;
@@ -540,9 +736,6 @@ footer {
         border: 2px solid var(--light-ui-element-border);
         padding: 0 0.5rem;
         background-color: var(--light-bg-section);
-        /* p {
-        margin: 0;
-    } */
     }
 }
 
@@ -555,24 +748,26 @@ footer {
         padding: 0 0.5rem;
         background-color: var(--light-bg-section);
 
-        /* p {
-        margin: 0;
-    } */
     }
 }
 
 .retro-grid-item-3 {
     @media screen and (width >=700px) {
         display: grid;
-        grid-template-columns: subgrid;
+        grid-template-columns: 1fr 1fr;
         grid-column: 1 / 3;
         border: 2px solid var(--light-ui-element-border);
         padding: 0 0.5rem;
         background-color: var(--light-bg-section);
 
-        /* p {
-        margin: 0;
-    } */
+        img {
+            margin: 0;
+        }
+
+        p {
+            padding-left: 0.5rem;
+        }
+
     }
 }
 
@@ -585,18 +780,6 @@ footer {
         padding: 0 0.5rem;
         background-color: var(--light-bg-section);
 
-        /* p {
-        margin: 0;
-    } */
-    }
-}
-
-.retro-list {
-    list-style: decimal;
-    margin: 0 2rem 2rem 2rem;
-
-    li {
-        margin-top: var(--spacing);
     }
 }
 
@@ -614,84 +797,146 @@ footer {
 }
 
 /* These selectors are used for the grid for the section mtg */
-.decklist-hero-img {
-    /* Make smaller images for this */
+
+.mtg-hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0;
 
     @media screen and (width >=700px) {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 0.2rem;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+        margin: 0;
     }
 }
 
-.decklist-container {
-    /* display: grid;
-    grid-template-columns: 1fr; */
 
-    ul {
-        list-style-type: none;
-        margin: 1rem 0;
+.mtg-grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    align-items: start;
+    margin-top: var(--xs-spacing);
+
+    .mtg-grid-item-1,
+    .mtg-grid-item-2,
+    .mtg-grid-item-3 {
+
+        display: grid;
+        gap: var(--sm-spacing);
+
+        .mtg-grid-item-content {
+            display: grid;
+            gap: 0.5rem;
+            align-items: start;
+
+            p {
+                grid-column: span 2;
+                margin: 0;
+            }
+
+            ul {
+                list-style: none;
+                margin: 0;
+            }
+
+            img {
+                width: 15px;
+                height: 15px;
+                margin: 0;
+            }
+        }
 
     }
 
-    p {
-        color: var(--light-text-secondary);
-        font-weight: 700;
+    .mtg-grid-item-4,
+    .mtg-grid-item-5 {
+        display: grid;
+        gap: 0.5rem;
 
-    }
+        p {
+            margin: 0;
+        }
 
-    img {
-        width: 15px;
-        height: 15px;
+        ul {
+            list-style: none;
+            margin: 0;
+        }
     }
 
     @media screen and (width >=700px) {
         display: grid;
-        /* grid-template-columns: subgrid; */
+        grid-template-columns: 1fr 1fr;
+        gap: var(--sm-spacing);
 
-        img {
-            width: 20px;
-            height: 20px
+        .mtg-grid-item-1,
+        .mtg-grid-item-2,
+        .mtg-grid-item-3,
+        .mtg-grid-item-4 {
+            display: grid;
+            gap: 0.5rem;
+
+            .mtg-grid-item-content {
+                p {
+                    grid-column: span 2;
+                    margin: 0;
+                }
+
+                ul {
+                    margin: 0;
+
+                    li {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+
+        .mtg-grid-item-4,
+        .mtg-grid-item-5 {
+            display: grid;
+            gap: 0.5rem;
+
+            p {
+                margin: 0;
+            }
+
         }
     }
 
     @media screen and (width >=1024px) {
         display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--sm-spacing);
 
-        img {
-            width: 20px;
-            height: 20px
+        .mtg-grid-item-1,
+        .mtg-grid-item-2,
+        .mtg-grid-item-3,
+        .mtg-grid-item-4 {
+            display: grid;
+            gap: var(--sm-spacing);
+
+
+            .mtg-grid-item-content {
+                grid-template-columns: repeat(2, 1fr);
+                align-items: start;
+                grid-template-rows: auto auto;
+
+
+                p {
+                    grid-column: span 2;
+                    margin: 0;
+                }
+
+                ul {
+                    margin: 0;
+
+                    li {
+                        margin: 0;
+                    }
+                }
+            }
         }
     }
-}
-
-.decklist-creatures {
-
-    @media screen and (width >=700px) {
-        grid-template-columns: subgrid;
-        grid-row: 1/4;
-        justify-self: stretch;
-    }
-}
-
-.decklist-sorceries {
-
-
-    @media screen and (width >=700px) {
-        grid-template-columns: subgrid;
-        grid-row: 2/3;
-        justify-self: stretch;
-    }
-}
-
-.decklist-instants {
-    justify-self: stretch
-}
-
-.decklist-lands {
-    justify-self: stretch
-}
-
-.decklist-total {
-    justify-self: stretch
 }

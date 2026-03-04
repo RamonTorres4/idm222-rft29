@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <style>
+            .mtg-grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--sm-spacing);
+
+    .mtg-grid-item-1,
+    .mtg-grid-item-2,
+    .mtg-grid-item-3 {
+
+        display: grid;
+        gap: var(--sm-spacing);
+
+        .mtg-grid-item-content {
+            display: grid;
+            gap: 0.5rem;
+
+            p {
+                grid-column: span 2;
+                margin: 0;
+            }
+
+            ul {
+                list-style: none;
+                margin: 0;
+            }
+
+            img {
+                width: 15px;
+                height: 15px;
+            }
+        }
+
+    }
+
+    @media screen and (width >=700px) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--sm-spacing);
+    }
+}
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <header>
+                <nav>
+                    <a href="#" class="logo">Home</a>
+                    <input type="checkbox" class="id" id="btn_menu" hidden>
+                    <label for="btn_menu">
+                        <!-- input svg here -->
+                    </label>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+
+        <!-- parent div = mtg-grid-container
+	            child div = mtg-grid-item-1 | mtg-grid-item-2 | mtg-grid-item-3.....
+                    child image = mtg-grid-item-image
+                    child content = mtg-grid-item-content 
+        -->
+
+        .mtg-grid-item-image-1 {
+        order: 1;
+        }
+
+        .mmtg-grid-item-image-2 {
+        order: 2;
+        }
+
+        mtg-grid-item-image-3 {
+        order: 3;
+        }
+
+        <!-- MTG code -->
+        <div class="mtg-grid-container">
+            <div class="mtg-grid-item-1">
+                <div class="mtg-grid-item-image-1">
+                    <img src="images/about/tolarian-terror-crop.jpg"
+                        alt="#">
+                </div>
+                <div class="mtg-grid-item-content">
+                    <p><span>Creatures (10)</span></p>
+                    <ul>
+                        <li>4 Tolarian Terror</li>
+                        <li>2 Gurmag Angler</li>
+                        <li>4 Sneaky Snacker</li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <img
+                                src="images/about/6Mana.png"
+                                alt="a number six in a grey circle"><img
+                                class="mana"
+                                src="images/about/B---Mana.png"
+                                alt="a teardrop in a blue circle">
+                        </li>
+                        <li>
+                            <img
+                                src="images/about/6Mana.png"
+                                alt="a number six in a grey circle"><img
+                                class="mana"
+                                src="images/about/U---Mana.png"
+                                alt="a skull in a grey circle">
+                        </li>
+                        <li>
+                            <img
+                                src="images/about/B---Mana.png"
+                                alt="a teardrop in a blue circle"><img
+                                class="mana"
+                                src="images/about/U---Mana.png"
+                                alt="a skull in a grey circle">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mtg-grid-item-2">
+                <div class="mtg-grid-item-image-2">
+                    <img src="images/about/gurmag-angler-crop.jpg"
+                        alt="#">
+                </div>
+                <div class="mtg-grid-item-content">
+                    <p><span>Sorceries (9)</span></p>
+                    <ul>
+                        <li>3 Ponder</li>
+                        <li>2 Deep Analysis</li>
+                        <li>4 Lorien Revealed</li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <img
+                                src="images/about/B---Mana.png"
+                                alt="a teardrop in a blue circle">
+                        </li>
+                        <li>
+                            <img
+                                src="images/about/3Mana.png"
+                                alt="a number three in a grey circle"><img
+                                class="mana"
+                                src="images/about/B---Mana.png"
+                                alt="a skull in a grey circle">
+                        </li>
+                        <li>
+                            <img
+                                src="images/about/3Mana.png"
+                                alt="a number three in a grey circle"><img
+                                class="mana"
+                                src="images/about/B---Mana.png"
+                                alt="a teardrop in a blue circle"><img
+                                class="mana"
+                                src="images/about/B---Mana.png"
+                                alt="a teardrop in a blue circle">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mtg-grid-item-3">
+                <div class="mtg-grid-item-image-3">
+                    <img src="images/about/sneaky-snacker-small.jpg" alt="#">
+                </div>
+                <div class="mtg-grid-item-content">
+                    <p><span>Instants (24)</span></p>
+                    <ul>
+                        <li>4 Brainstorm</li>
+                        <li>3 Consider</li>
+                        <li>4 Counterspell</li>
+                        <li>4 Snuff Out</li>
+                        <li>2 Spell Pierce</li>
+                        <li>4 Though Scour</li>
+                        <li>3 Unexpected Fangs</li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <img
+                                src="images/about/B---Mana.png"
+                                alt="a teardrop in a blue circle">
+                        </li>
+                        <li>
+                            <img
+                                src="images/about/B---Mana.png"
+                                alt="a teardrop in a blue circle">
+                        </li>
+                        <li>
+                            <img
+                                src="images/about/B---Mana.png"
+                                alt="a teardrop in a blue circle"> <img
+                                src="images/about/B---Mana.png"
+                                alt="a teardrop in a blue circle">
+                        </li>
+                        <li>
+                            <img
+                                src="images/about/3Mana.png"
+                                alt="a number three in a grey circle"><img
+                                class="mana"
+                                src="images/about/U---Mana.png"
+                                alt="a skull in a grey circle">
+                        </li>
+                        <li>
+                            <img
+                                src="images/about/B---Mana.png"
+                                alt="a teardrop in a blue circle">
+                        </li>
+                        <li>
+                            <img
+                                src="images/about/B---Mana.png"
+                                alt="a teardrop in a blue circle">
+                        </li>
+                        <li>
+                            <img
+                                src="images/about/1Mana.png"
+                                alt="a number one in a grey circle"><img
+                                class="mana"
+                                src="images/about/U---Mana.png"
+                                alt="a skull in a grey circle">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mtg-grid-item-4">
+                <div class="mtg-grid-item-content">
+                    <p><span>Lands (17)</span></p>
+                    <ul>
+                        <li>1 Bojuka Bog</li>
+                        <li>4 Contaminated Aquifer</li>
+                        <li>2 Ice Tunnel</li>
+                        <li>11 Island</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mtg-grid-item-5">
+                <div class="mtg-grid-item-content">
+                    <p><span>60 Cards Total</span></p>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
