@@ -115,7 +115,6 @@
 
 body {
     min-height: 100vh;
-
 }
 
 /* nav */
@@ -128,6 +127,14 @@ nav {
     .logo {
         display: block;
         margin-left: 1rem;
+
+        /* a {
+
+            &:hover,
+            &:active {
+                color: var(--light-accent-primary);
+            }
+        } */
     }
 
     .menu {
@@ -227,6 +234,11 @@ nav {
                     font-size: var(--h2size);
                 }
 
+                &:hover,
+                &:active {
+                    color: var(--light-accent-primary);
+                }
+
             }
         }
     }
@@ -237,8 +249,14 @@ main {
     margin: 0 var(--spacing);
     max-width: 60rem;
 
-    @media screen and (width >=1024px) {
+    @media screen and (min-width: 780px) {
+        padding: 0 2rem;
+    }
+
+
+    @media screen and (min-width: 1024px) {
         max-width: 120rem;
+        padding: 0 2rem;
     }
 }
 
@@ -313,7 +331,7 @@ a {
 }
 
 a:hover {
-    color: var(--light-ui-element-hover);
+    color: var(--light-accent-primary);
 }
 
 a:active {
@@ -458,9 +476,9 @@ footer {
 
             a {
 
-                &:click {
-                    background-color: var(--light-accent-primary);
-                    ;
+                &:hover,
+                &:active {
+                    color: var(--light-accent-primary);
                 }
             }
         }
@@ -476,7 +494,7 @@ footer {
     display: grid;
     grid-template-columns: 1fr;
 
-    @media screen and (width >=700px) {
+    @media screen and (min-width: 700px) {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
@@ -489,7 +507,7 @@ footer {
     display: grid;
     grid-template-columns: 1fr;
 
-    @media screen and (width >=700px) {
+    @media screen and (min-width: 700px) {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
@@ -515,7 +533,7 @@ footer {
         }
     }
 
-    @media screen and (width >=600px) {
+    @media screen and (min-width: 600px) {
         margin-left: var(--list-indent-spacing);
         max-width: 80%;
 
@@ -537,7 +555,7 @@ footer {
 
     margin-top: var(--xs-spacing);
 
-    @media screen and (width >=700px) {
+    @media screen and (min-width: 700px) {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
@@ -549,7 +567,7 @@ footer {
         }
     }
 
-    @media screen and (width >=1024px) {
+    @media screen and (min-width: 1024px) {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 1rem;
@@ -559,7 +577,7 @@ footer {
 /* About Page Specific Styling */
 
 .about-container {
-    @media screen and (width >=700px) {
+    @media screen and (min-width: 700px) {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
@@ -594,6 +612,8 @@ footer {
 /* Hobbies Page Specific Styling */
 /* This controls the anchor tags at the top of the hobbies page. */
 .hobbies-nav {
+    background-color: var(--light-bg-primary);
+    border: 2px solid var(--light-ui-element-border);
 
     ul {
         margin: 0;
@@ -601,23 +621,31 @@ footer {
         flex-direction: column;
         flex-wrap: wrap;
         justify-content: start;
-        gap: 2rem;
         list-style: none;
+        padding: 0.5rem 0 0.5rem 0.5rem;
+
 
         li {
-            margin: 0;
-            padding: 1rem 0 0 0;
+            margin-top: var(--sm-spacing);
             font-size: var(--h4size);
+
+
+
 
             a {
                 color: var(--light-text-secondary);
+                font-weight: bold;
             }
+
+
+        }
+
+        li:nth-child(1) {
+            margin-top: 0;
         }
     }
 
-    @media screen and (width >=500px) {
-
-
+    @media screen and (min-width: 500px) {
         /* background-color: var(--light-bg-section); */
         border-bottom: 2px solid var(--light-ui-element-border);
         margin-top: var(--spacing);
@@ -633,7 +661,6 @@ footer {
 
             li {
                 margin: 0;
-                padding: 1rem 0 0 0;
                 font-size: var(--h4size);
 
                 a {
@@ -661,7 +688,7 @@ footer {
 
 
 
-    @media screen and (width >=700px) {
+    @media screen and (min-width: 700px) {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
@@ -720,7 +747,7 @@ footer {
 /* This controls the unordered list in the retro section */
 
 .retro-grid-container {
-    @media screen and (width >=700px) {
+    @media screen and (min-width: 700px) {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
@@ -729,7 +756,7 @@ footer {
 
 .retro-grid-item-1 {
 
-    @media screen and (width >=700px) {
+    @media screen and (min-width: 700px) {
         display: grid;
         grid-template-columns: subgrid;
         grid-column: 1 / 3;
@@ -740,7 +767,7 @@ footer {
 }
 
 .retro-grid-item-2 {
-    @media screen and (width >=700px) {
+    @media screen and (min-width: 700px) {
         display: grid;
         grid-template-columns: subgrid;
         grid-column: 1 / 3;
@@ -752,7 +779,7 @@ footer {
 }
 
 .retro-grid-item-3 {
-    @media screen and (width >=700px) {
+    @media screen and (min-width: 700px) {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-column: 1 / 3;
@@ -772,7 +799,7 @@ footer {
 }
 
 .retro-grid-item-4 {
-    @media screen and (width >=700px) {
+    @media screen and (min-width: 700px) {
         display: grid;
         grid-template-columns: subgrid;
         grid-column: 1 / 3;
@@ -783,7 +810,7 @@ footer {
     }
 }
 
-@media screen and (width >=700px) {
+@media screen and (min-width: 700px) {
 
     ul {
         list-style: decimal;
@@ -803,7 +830,7 @@ footer {
     grid-template-columns: 1fr;
     margin: 0;
 
-    @media screen and (width >=700px) {
+    @media screen and (min-width: 700px) {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 0.5rem;
@@ -865,7 +892,7 @@ footer {
         }
     }
 
-    @media screen and (width >=700px) {
+    @media screen and (min-width: 700px) {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: var(--sm-spacing);
@@ -905,7 +932,7 @@ footer {
         }
     }
 
-    @media screen and (width >=1024px) {
+    @media screen and (min-width: 1024px) {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: var(--sm-spacing);
