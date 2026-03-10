@@ -3,7 +3,8 @@
 This documnent is where I will keep all of my design choices so I can reference them later.
 
 ## Navigation
-Homepage
+
+- Homepage
 - Portfolio
 - Case Studies
 - About
@@ -11,11 +12,10 @@ Homepage
 This is for both the header navigation and footer.
 
 ## Screen Sizes
+
 - Small: Less than 700px
 - Medium: 700px to 1023px
 - Large: 1024px
-
-
 
 ## Images
 
@@ -30,6 +30,7 @@ This is for both the header navigation and footer.
 Aspect Ratio 4x6 for hero images
 
 ## Component Spacing
+
 - xs-spacing: 0.5rem; (This is for small gaps)
 - sm-spacing: 1rem; (This is the standard spacing)
 - md-spacing: 1.5rem; (This spacing for between grouped elements)
@@ -37,7 +38,6 @@ Aspect Ratio 4x6 for hero images
 - xl-spacing: 3rem; (This is for large spacing between layouts)
 <!-- - img-spacing: 0.5rem (Depericate and use xs-spacing) -->
 --list-indent-spacing: 2.5rem; (This is to add an indent to ul/ol items)
-
 
 <!-- ## Color Palette
 - primary: #2E605D
@@ -47,6 +47,7 @@ Aspect Ratio 4x6 for hero images
 - neutral-dark: #363636 -->
 
 ### Light Mode
+
     --light-brand-primary: #2e615e; 
     --light-accent-primary: #C58C2B;
     --light-bg-primary: #F8FCFC;
@@ -64,6 +65,7 @@ Aspect Ratio 4x6 for hero images
     --light-status-color-info: #2E918C; 
 
 ### Dark Mode
+
     --dark-brand-primary: #5CB3AD; 
     --dark-accent-primary: #E4B33F;
     --dark-bg-primary: #0D1F1D;
@@ -84,7 +86,8 @@ Aspect Ratio 4x6 for hero images
 
 ### SVG Codes
 
-#### SVG Home Logo 
+#### SVG Home Logo
+
 <svg class="logo" width="100" height="100"
                     viewBox="0 0 200 200"
                     fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -218,10 +221,11 @@ This is the default line height for paragraph text.
 - Letter spacing 0%
 
 ### Borders
+
 Borders have a weight of 2px for navs and footers.
 
-
 ### Helpful Sites
-- https://codebeautify.org/rem-to-percent-converter
-- https://nekocalc.com/px-to-rem-converter
-- https://validator.w3.org/nu/
+
+- <https://codebeautify.org/rem-to-percent-converter>
+- <https://nekocalc.com/px-to-rem-converter>
+- <https://validator.w3.org/nu/>
