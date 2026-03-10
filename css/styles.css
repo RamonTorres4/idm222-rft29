@@ -25,6 +25,7 @@
     --black: #000;
     --gray: #838383;
 
+ @media (prefers-color-scheme: dark){
     --dark-brand-primary: #5CB3AD;
     --dark-accent-primary: #E4B33F;
     --dark-bg-primary: #0D1F1D;
@@ -40,6 +41,7 @@
     --dark-status-color-warning: #E1A226;
     --dark-status-color-error: #F15D5E;
     --dark-status-color-info: #63C6C1;
+}
 
     /* sizing & spacing */
 
@@ -53,7 +55,7 @@
 
     --spacing: 1.5rem;
 
-    --list-indent-spacing: 2.5rem;
+    --list-indent-spacing: 0 2.5rem;
     /* Font Spacing and Sizing */
 
 
@@ -255,8 +257,9 @@ main {
 
 
     @media screen and (min-width: 1024px) {
-        max-width: 120rem;
+        max-width: 80%;
         padding: 0 2rem;
+        margin: 0 7rem;
     }
 }
 
@@ -593,14 +596,14 @@ footer {
 }
 
 .about-list {
-    margin-left: var(--list-indent-spacing);
+    /* margin-left: var(--list-indent-spacing); */
 
     li::marker {
         color: var(--light-accent-primary);
     }
 
     li {
-        margin: 0.5rem;
+        margin: var(--list-indent-spacing);
     }
 }
 
