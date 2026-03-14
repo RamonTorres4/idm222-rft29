@@ -132,6 +132,7 @@ nav {
         margin-left: 1rem;
     }
 
+
     .menu {
         display: none;
 
@@ -415,7 +416,8 @@ img {
 video {
     height: auto;
     width: 100%;
-    margin-top: var(--xs-spacing);
+    /* margin-top: var(--xs-spacing); */
+    margin-top: 0;
 }
 
 picture+p {
@@ -439,13 +441,37 @@ picture+p {
     margin-top: 2rem;
 }
 
+    .off-screen-menu{
+         ul {
+            li {
+                a {
+                    color: var(--white);
+                    font-weight: 600;
+                    letter-spacing: var(--nav-kerning);
+                    font-family: 'EB Garamond', Georgia, serif;
+
+                    &:hover,
+                    &:active {
+                        color: var(--accent-primary);
+                    }
+                }
+
+            }
+        }
+    }
+
 footer {
     background-color: var(--brand-primary);
+    border-top: 2px solid var(--ui-element-border);
     margin-top: var(--lg-spacing);
+
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    border-top: 2px solid var(--ui-element-border);
+    
+    
+    
+    padding: 1rem;
 
     ul {
         display: flex;
@@ -633,10 +659,17 @@ footer {
 /* About Page Specific Styling */
 
 .about-container {
+
     @media screen and (min-width: 700px) {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
+
+           div{
+        h2{
+            margin: 0;
+        }
+    }
 
     }
 }
@@ -783,6 +816,7 @@ footer {
     ol {
         list-style: none;
         margin-top: var(--heading-spacing);
+        margin-left: 0;
 
         li {
             margin-top: 0.5rem;
