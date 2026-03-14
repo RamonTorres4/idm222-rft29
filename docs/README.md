@@ -27,60 +27,43 @@ This is for both the header navigation and footer.
 
 `Large - 1024w`
 
-Aspect Ratio 4x6 for hero images
-
-## Component Spacing
-
-- xs-spacing: 0.5rem; (This is for small gaps)
-- sm-spacing: 1rem; (This is the standard spacing)
-- md-spacing: 1.5rem; (This spacing for between grouped elements)
-- lg-spacing: 2rem; (This is for spacing between sections)
-- xl-spacing: 3rem; (This is for large spacing between layouts)
-<!-- - img-spacing: 0.5rem (Depericate and use xs-spacing) -->
---list-indent-spacing: 2.5rem; (This is to add an indent to ul/ol items)
-
-<!-- ## Color Palette
-- primary: #2E605D
-- secondary: #FFD873
-- accent: #EFF5EC
-- neutral-light: #97A1A2
-- neutral-dark: #363636 -->
+Aspect Ratio 6x4 for hero images
 
 ### Light Mode
 
-    --light-brand-primary: #2e615e; 
-    --light-accent-primary: #C58C2B;
-    --light-bg-primary: #F8FCFC;
-    --light-bg-surface: #FFF;
-    --light-bg-section: #E4F1F0;
-    --light-text-primary: #1D2F2E;
-    --light-text-secondary: #3E605C;
-    --light-text-muted: #6F908E;
-    --light-ui-element-border: #B6D0CD;
-    --light-ui-element-hover: #377874;
-    --light-ul-element-focus-ring: #1E4E4B;
-    --light-status-color-success: #3D9D7D;
-    --light-status-color-warning: #B86C29;
-    --light-status-color-error: #B22925;
-    --light-status-color-info: #2E918C; 
+    --brand-primary: #2e615e; 
+    --accent-primary: #C58C2B;
+    --bg-primary: #F8FCFC;
+    --bg-surface: #FFF;
+    --bg-section: #E4F1F0;
+    --text-primary: #1D2F2E;
+    --text-secondary: #3E605C;
+    --text-muted: #6F908E;
+    --ui-element-border: #B6D0CD;
+    --ui-element-hover: #377874;
+    --ul-element-focus-ring: #1E4E4B;
+    --status-color-success: #3D9D7D;
+    --status-color-warning: #B86C29;
+    --status-color-error: #B22925;
+    --status-color-info: #2E918C; 
 
 ### Dark Mode
 
-    --dark-brand-primary: #5CB3AD; 
-    --dark-accent-primary: #E4B33F;
-    --dark-bg-primary: #0D1F1D;
-    --dark-bg-surface: #132B29;
-    --dark-bg-section: #1C3B37;
-    --dark-text-primary: #E7F4F4;
-    --dark-text-secondary: #B5D3CF;
-    --dark-text-muted: #FFFFFF;
-    --dark-ui-element-border: #2E5652;
-    --dark-ui-element-hover: #70C9C3;
-    --dark-ul-element-focus-ring: #96D6D4;
-    --dark-status-color-success: #5DC097;
-    --dark-status-color-warning: #E1A226;
-    --dark-status-color-error: #F15D5E;
-    --dark-status-color-info: #63C6C1;   
+    --brand-primary: #5CB3AD; 
+    --accent-primary: #E4B33F;
+    --bg-primary: #0D1F1D;
+    --bg-surface: #132B29;
+    --bg-section: #1C3B37;
+    --text-primary: #E7F4F4;
+    --text-secondary: #B5D3CF;
+    --text-muted: #FFFFFF;
+    --ui-element-border: #2E5652;
+    --ui-element-hover: #70C9C3;
+    --ul-element-focus-ring: #96D6D4;
+    --status-color-success: #5DC097;
+    --status-color-warning: #E1A226;
+    --status-color-error: #F15D5E;
+    --status-color-info: #63C6C1;   
 
 ## Icons
 
@@ -155,70 +138,61 @@ Aspect Ratio 4x6 for hero images
 </defs>
 </svg>
 
+## Spacing
 
+### Component Spacing
+
+These are the variables used for spacing between elements and components.
+
+- xs-spacing: 0.5rem;  (This is for small gaps)
+- sm-spacing: 1rem; (This is the standard spacing)
+- md-spacing: 1.5rem; (This spacing for between grouped elements)
+- lg-spacing: 2rem; (This is for spacing between sections)
+- xl-spacing: 3rem; (This is for large spacing between layouts)
+- list-indent-spacing: 2.5rem; (This is to add an indent to ul/ol items)
+<!-- - img-spacing: 0.5rem (Depericate and use xs-spacing) -->
+
+### Font Spacing
+
+These are the variables used for typography spacing.
+
+- heading-spacing: 0.5rem;
+- heading-line-height: 2rem;
+- body-copy-line-height: 1.8rem;
+- kerning: 0.5px;
+
+### Font Sizing
+
+- h1size: 3rem;
+- h2size: 2rem;
+- h3size: 1.5rem;
+- h4size: 1.125rem;
+- psize: 1rem;
+- lisize: 1rem;
+- nav-li-a-size: 1.5rem;
+- mobile-li-text: 1.25rem;
 
 ## Fonts
-### Headings & Titles
+
+### Heading Font
 
 **EB Garamond**
 
-This font will be used for header fonts, h1-h4.
-```
+This font will be used for header fonts, h1-h4
+
+```text
 https://fonts.google.com/specimen/EB+Garamond?preview.text=Case%20Studies&categoryFilters=Serif:%2FSerif%2F*,%2FSlab%2F*
 ```
+
+### Non-heading Font
 
 **Noto Sans**
 
 This font will be used for every other elements, including p tags, li tags, etc.
-```
+
+```text
 https://fonts.google.com/noto/specimen/Noto+Sans?preview.text=The%20red%20fox%20jumps%20over%20the%20brown%20log.&categoryFilters=Sans+Serif:%2FSans%2F*
 ```
-
-### Font Spacing
-- line-height: 1.4rem (22.4px) | 30px
-- This is another option 2.375 (38px)
-This is the default line height for paragraph text.
-
-
-## Font Sizing
-- xxlarge 3 rem (48px) | h1
-- xlarge: 2rem (32px) | h2
-- large: 1.5rem (24px) | h3
-- medium: 1.125rem (18px) | h4
-- small: 1 rem (16px) | p
-- xsmall: 0.75rem (12px) | li
-
-
-## Paragraph Text
-**Paragraph Large**
-- Font Noto Sans
-- Weight 400
-- Size 28px
-- Line-Height 45px
-- Paragraph Spacing 32px
-- Letter spacing 0%
-
-**Paragraph Regular**
-- Font Noto Sans
-- Weight 400
-- Size 21px
-- Line-Height 36px
-- Paragraph Spacing 32px
-- Letter spacing 0%
-
-**Paragraph Small**
-- Font Noto Sans
-- Weight 400
-- Size 17px
-- Line-Height 25px
-- Letter spacing 0%
-
-**Paragraph Xsmall**
-- Font Noto Sans
-- Weight 400 17
-- Size 15px
-- Line-Height 23px
-- Letter spacing 0%
 
 ### Borders
 
